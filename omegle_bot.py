@@ -27,9 +27,9 @@ while True:
         main_msg = random.choice(messages)
         ending_msg = random.choice(endings)
 
-        text_area = driver.find_element_by_xpath("/html/body/div[5]/div/div/div[2]/table/tbody/tr/td[2]/div/textarea")
-        send_btn = driver.find_element_by_xpath("/html/body/div[5]/div/div/div[2]/table/tbody/tr/td[3]/div/button")
-        new_btn = driver.find_element_by_xpath("/html/body/div[5]/div/div/div[2]/table/tbody/tr/td[1]/div/button")
+        text_area = driver.find_element("xpath", "/html/body/div[5]/div/div/div[2]/table/tbody/tr/td[2]/div/textarea")
+        send_btn = driver.find_element("xpath", "/html/body/div[5]/div/div/div[2]/table/tbody/tr/td[3]/div/button")
+        new_btn = driver.find_element("xpath", "/html/body/div[5]/div/div/div[2]/table/tbody/tr/td[1]/div/button")
 
         for letter in greeting_msg:
             text_area.send_keys(letter)
@@ -59,6 +59,6 @@ while True:
         time.sleep(2)
 
     except:
-        exit_btn = driver.find_element_by_xpath("/html/body/div[5]/div/div/div[2]/table/tbody/tr/td[1]/div/button")
+        exit_btn = driver.find_element("xpath", "/html/body/div[5]/div/div/div[2]/table/tbody/tr/td[1]/div/button")
         exit_btn.click()
         time.sleep(1)
