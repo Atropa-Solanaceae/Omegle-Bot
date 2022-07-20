@@ -20,6 +20,16 @@ driver.get("https://www.omegle.com")
 time.sleep(6)
 
 n = 0
+i = 0
+
+origin = driver.find_element("xpath", "/html/body/div[3]/table/tbody/tr[2]/td[2]/img")
+origin.click()
+origin = driver.find_element("xpath", "/html/body/div[7]/div/p[1]/label/input")
+origin.click()
+origin = driver.find_element("xpath", "/html/body/div[7]/div/p[2]/label/input")
+origin.click()
+origin = driver.find_element("xpath", "/html/body/div[7]/div/p[3]/input")
+origin.click()
 
 while True:
     try:
@@ -57,6 +67,8 @@ while True:
         new_btn.click()
         new_btn.click()
         time.sleep(2)
+        i += 1
+        print(i)
 
     except:
         exit_btn = driver.find_element("xpath", "/html/body/div[5]/div/div/div[2]/table/tbody/tr/td[1]/div/button")
